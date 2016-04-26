@@ -1,15 +1,33 @@
+var path = require('path');
+
+var cssLoader = {
+  test: /\.css$/,
+  loader: 'style!css'
+};
+
+var jsxLoader = {
+  test: /\.js$/,
+  loader: 'babel-loader',
+  exclude: /node_modules/
+};
+
+var jsonLoader = {
+  test: /\.json$/,
+  loader: 'json-loader'
+};
+
+var paths = {
+  APP: './app'
+}
+
 module.exports = {
-  entry: './index.js',
+  entry: path.join(__dirname, paths.APP, 'main.js'),
   target: 'node',
   output: {
-      path: __dirname,
-      filename: 'bundle.js'
-    },
+    path: __dirname,
+    filename: 'bundle.js'
+  },
   module: {
-      loaders: [
-            { test: /\.css$/, loader: 'style!css' },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-            { test:  /\.json$/, loader: 'json-loader' }
-        ]
-    }
+    loaders: [jsxLoader, cssLoader, jsonLoader]
+  }
 };
