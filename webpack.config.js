@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 
 var cssLoader = {
@@ -17,17 +18,23 @@ var jsonLoader = {
 };
 
 var paths = {
-  APP: './app'
+  APP: './app',
+  BUILD: './build'
 }
 
 module.exports = {
   entry: path.join(__dirname, paths.APP, 'main.js'),
   target: 'node',
   output: {
-    path: __dirname,
+    path: path.join(__dirname, paths.BUILD),
     filename: 'bundle.js'
   },
   module: {
     loaders: [jsxLoader, cssLoader, jsonLoader]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": "\"development\""
+    })
+  ]
 };

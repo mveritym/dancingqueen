@@ -1,7 +1,8 @@
 import React from 'react';
-import { createElement, render } from 'react-dom';
+import { render } from 'react-dom';
+import Test from './Test';
 
 render(
-  createElement(<div>Hello</div>),
+  <Test />,
   document.getElementById('app')
 );
