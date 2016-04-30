@@ -1,13 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, IndexRoute, Route, browserHistory } from 'react-router';
-import App from './App';
-import Login from './Login';
+import { Provider } from 'react-redux';
+import store from './mainStore';
+import routes from './routes';
 
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={ App }>
-      <IndexRoute component={ Login } />
-    </Route>
-  </Router>
+  <Provider store={store}>
+    { routes }
+  </Provider>
 ), document.getElementById('app'))
