@@ -1,3 +1,5 @@
+import { DO_LOGIN } from './constants';
+
 export const login = {
-  type: "LOGIN"
+  type: DO_LOGIN
 };
