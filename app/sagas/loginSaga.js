@@ -1,14 +1,15 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import { DO_LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/constants';
+import actions from '../actions/constants';
+import { login_success, login_failure } from '../actions/actions';
 import api from '../api/api.js';
 
 export function* login () {
   const loginSuccess = yield call(api.login);
-  const action = loginSuccess ? LOGIN_SUCCESS : LOGIN_FAILURE;
+  const action = loginSuccess ? login_success : login_failure;
   yield put(action);
 }
 
 export default function* () {
-  yield *takeLatest(DO_LOGIN, login);
+  yield* takeLatest(actions.DO_LOGIN, login);
 }

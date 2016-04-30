@@ -1,11 +1,11 @@
 import { expect } from 'chai';
-import { login } from './actions';
-import { DO_LOGIN } from './constants';
+import { login, login_success, login_failure } from './actions';
+import apiConstants from './constants';
 
 describe('Actions', () => {
-  it('login action', () => {
-    expect(login).to.deep.eq({
-      type: DO_LOGIN
-    })
+  it('returns correct actions', () => {
+    expect(login).to.deep.eq({ type: apiConstants.DO_LOGIN });
+    expect(login_success).to.deep.eq({ type: apiConstants.LOGIN_SUCCESS });
+    expect(login_failure).to.deep.eq({ type: apiConstants.LOGIN_FAILURE });
   });
 });
