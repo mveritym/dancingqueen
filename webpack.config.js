@@ -23,7 +23,7 @@ var paths = {
 }
 
 module.exports = {
-  entry: path.join(__dirname, paths.APP, 'main.js'),
+  entry: ['babel-polyfill', path.join(__dirname, paths.APP, 'main.js')],
   target: 'node',
   output: {
     path: path.join(__dirname, paths.BUILD),
