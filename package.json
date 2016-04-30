@@ -2,7 +2,7 @@
   "name": "dancingqueen",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack; node bundle.js",
+    "start": "node server.js",
     "test": "test",
     "lint": "$(npm bin)/eslint ./app"
   },

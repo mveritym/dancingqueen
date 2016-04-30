@@ -5,6 +5,7 @@ import App from './App';
 import Login from './Login';
 
 render((
+  
   <Router history={browserHistory}>
     <Route path="/" component={ App }>
       <IndexRoute component={ Login } />
