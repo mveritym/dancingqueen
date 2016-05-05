@@ -1,19 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { login } from './actions/actions';
+import React from 'react';
 
-class Login extends Component {
-  render() {
-    return (
-      <button onClick={this.props.onClick}>Login</button>
-    );
-  }
-}
+const Login = () => (
+  <a href="/login">Login</a>
+);
 
-function matchDispatchToProps(dispatch) {
-  return {
-    onClick: () => { dispatch(login) }
-  }
-}
-
-export default connect(null, matchDispatchToProps)(Login);
+export default Login;
