@@ -1,3 +1,5 @@
 export default {
-  login: () => { console.log('LOGGING IN!') }
-}
+  login: function* login() {
+    console.log('LOGGING IN!');
+  },
+};
