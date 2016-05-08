@@ -1,0 +1,17 @@
+@import url("./variables.css");
+
+.container {
+  padding: 20px 0;
+  box-shadow: 0 2px 5px var(--green-38);
+}
+
+.header {
+  composes: bariolRegular from "../fonts/fonts.css";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 52px;
+  color: var(--green-27);
+
+  width: 250px;
+  margin: auto;
+}

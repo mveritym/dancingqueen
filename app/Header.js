@@ -1,8 +1,10 @@
 import React from 'react';
-import styles from './Header.css';
+import styles from './styles/Header.css';
 
 const Header = () => (
-  <h1 className={styles.header}>Indio</h1>
+  <div className={styles.container}>
+    <h1 className={styles.header}>Indio</h1>
+  </div>
 );
 
 export default Header;
