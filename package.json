@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --require babel-polyfill 'app/**/*.spec.js'",
+    "test:watch": "npm run test -- --watch",
     "lint": "$(npm bin)/eslint ./app"
   },
   "main": "index.js",
