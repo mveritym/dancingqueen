@@ -5,7 +5,7 @@
   "repository": "https://github.com/mveritym/indio",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --compilers js:babel-core/register --require babel-polyfill 'app/**/*.spec.js' --watch",
+    "test": "mocha --require babel-polyfill 'app/**/*.spec.js'",
     "lint": "$(npm bin)/eslint ./app"
   },
   "main": "index.js",
