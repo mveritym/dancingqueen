@@ -1,8 +1,13 @@
 import React from 'react';
-import styles from './Login.css';
+import styles from './styles/Login.css';
 
 const Login = () => (
-  <a href="/login">Login</a>
+  <div className={styles.container}>
+    <div>Welcome to Indio! Log in to pick a playlist.</div>
+    <a className={styles.link} href="/login">
+      <div className={styles.text}>Login</div>
+    </a>
+  </div>
 );
 
 export default Login;

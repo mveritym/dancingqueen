@@ -1,0 +1,35 @@
+@import url("./variables.css");
+
+@custom-media --tablet-mq (min-width: 651px);
+@custom-media --desktop-mq (min-width: 1021px);
+
+.container {
+  max-width: var(--desktop-mq-max-width);
+  margin: auto;
+  margin-top: 150px;
+
+  color: var(--green-68);
+  composes: bariolRegular from "../fonts/fonts.css";
+  font-size: 28px;
+  text-align: center;
+}
+
+.link {
+  border: 1px solid var(--green-38);
+  display: block;
+
+  width: 150px;
+  height: 75px;
+  margin: auto;
+  margin-top: 30px;
+
+  text-decoration: none;
+}
+
+.text {
+  width: 50%;
+  height: 50%;
+  padding-top: 15%;
+  margin: auto;
+  text-transform: uppercase;
+}

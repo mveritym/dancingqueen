@@ -1,7 +1,16 @@
 :root {
+  /* colors */
   --green-primary: rgba(43,48,44,1);
   --green-68: rgba( 68, 79, 69,1);
   --green-54: rgba( 54, 61, 55,1);
   --green-38: rgba( 38, 45, 39,1);
   --green-27: rgba( 27, 39, 28,1);
+
+  /* max-width */
+  --mobile-mq-max-width: 400px;
+  --tablet-mq-max-width: 500px;
+  --desktop-mq-max-width: 700px;
 }
+
+@custom-media --tablet-mq(min-width: 651px);
+@custom-media --desktop-mq(min-width: 1021px);
