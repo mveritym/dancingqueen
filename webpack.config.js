@@ -1,9 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
 
+var paths = {
+  APP: './app',
+  BUILD: './build',
+  FONTS: './app/fonts'
+};
+
 var cssLoader = {
   test: /\.css$/,
-  loader: 'style!css'
+  loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
 };
 
 var jsxLoader = {
@@ -21,10 +27,10 @@ var jsonLoader = {
   loader: 'json-loader'
 };
 
-var paths = {
-  APP: './app',
-  BUILD: './build'
-}
+var fontLoader = {
+  test: /\.woff$/,
+  loader: 'url?limit=50000'
+};
 
 module.exports = {
   entry: ['babel-polyfill', path.join(__dirname, paths.APP, 'main.js')],
@@ -35,7 +41,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [jsxLoader, cssLoader, jsonLoader]
+    loaders: [jsxLoader, fontLoader, cssLoader, jsonLoader]
   },
   plugins: [
     new webpack.DefinePlugin({

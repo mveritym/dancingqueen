@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "BariolRegular";
+  src: url("./fonts/bariol_regular.woff");
+}
+
+h1 {
+  font-family: "BariolRegular"
+}

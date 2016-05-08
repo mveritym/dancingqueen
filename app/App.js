@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './Header';
 
 const App = (props) => (
   <div>
-    <h1>Indio</h1>
+    <Header />
     { props.children }
   </div>
 );
