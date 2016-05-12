@@ -4,7 +4,7 @@
   "description": "Generate Spotify playlists based on you and your friends' collective music taste",
   "repository": "https://github.com/mveritym/indio",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "mocha --require babel-polyfill 'app/**/*.spec.js'",
     "test:watch": "npm run test -- --watch",
     "lint": "$(npm bin)/eslint ./app"
