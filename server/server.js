@@ -7,7 +7,8 @@ import cookieParser from 'cookie-parser';
 import React from 'react';
 import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server'
-import routes from './app/routes';
+import routes from '../app/routes';
+import renderPage from './renderer';
 
 const app = express();
 app.use(express.static('build'))
@@ -39,7 +40,7 @@ app.get('*', (req, res) => {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-      res.status(200).send(renderToString(<RouterContext {...renderProps} />))
+      res.status(200).send(renderPage(renderToString(<RouterContext {...renderProps} />)))
     } else if (req.url === '/login') {
       console.log('LOGGING IN');
       login(req, res);
