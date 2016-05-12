@@ -32,4 +32,8 @@
   padding-top: 15%;
   margin: auto;
   text-transform: uppercase;
+  color: var(--green-68);
+  &:visited {
+    color: var(--green-68);
+  }
 }
