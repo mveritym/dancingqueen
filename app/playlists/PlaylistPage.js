@@ -1,0 +1,23 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchPlaylists } from './actions';
+
+class PlaylistPage extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(fetchPlaylists);
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Playlist List</h1>
+      </div>
+    )
+  };
+};
+
+function mapStateToProps(state) {
+  return { playlists: state.playlists };
+}
+
+export default connect(mapStateToProps)(PlaylistPage);

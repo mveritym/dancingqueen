@@ -7,8 +7,12 @@ import cookieParser from 'cookie-parser';
 import React from 'react';
 import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server'
+import { Provider } from 'react-redux';
+
 import routes from '../app/routes';
 import renderPage from './renderer';
+import store from '../app/mainStore';
+
 import { login, loginCallback } from './login';
 
 const app = express();
@@ -26,7 +30,11 @@ app.get('*', (req, res) => {
     } else if (req.url.split('?')[0] === '/callback') {
       loginCallback(req, res);
     } else if (renderProps) {
-      res.status(200).send(renderPage(renderToString(<RouterContext {...renderProps} />)))
+      res.status(200).send(renderPage(renderToString(
+        <Provider store={store}>
+          <RouterContext {...renderProps} />
+        </Provider>
+      )))
     } else {
       res.status(404).send('Not found')
     }
