@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylists } from './actions';
 
-class PlaylistPage extends React.Component {
+export class PlaylistPage extends React.Component {
   componentWillMount() {
     this.props.dispatch(fetchPlaylists);
   };
