@@ -9,7 +9,7 @@ import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server'
 import routes from '../app/routes';
 import renderPage from './renderer';
-import login from './login';
+import { login, loginCallback } from './login';
 
 const app = express();
 app.use(express.static('build'))
@@ -21,10 +21,12 @@ app.get('*', (req, res) => {
       res.status(500).send(error.message)
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-    } else if (renderProps) {
-      res.status(200).send(renderPage(renderToString(<RouterContext {...renderProps} />)))
     } else if (req.url === '/login') {
       login(req, res);
+    } else if (req.url.split('?')[0] === '/callback') {
+      loginCallback(req, res);
+    } else if (renderProps) {
+      res.status(200).send(renderPage(renderToString(<RouterContext {...renderProps} />)))
     } else {
       res.status(404).send('Not found')
     }

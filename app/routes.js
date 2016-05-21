@@ -11,7 +11,7 @@ export default (
   <Router history={browserHistory}>
     <Route path="/" component={ App }>
       <IndexRoute component={ Login } />
-      <Route path="/test" component={ Test } />
+      <Route path="/playlists" component={ Test } />
     </Route>
   </Router>
 )
