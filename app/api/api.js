@@ -5,7 +5,9 @@ function getHeaders(token) {
 }
 
 async function getPlaylists(accessToken) {
-  const playlists = await fetch(`${SPOTIFY_URI}/me/playlists`, { headers: getHeaders(accessToken) });
+  const playlists = await fetch(`${SPOTIFY_URI}/me/playlists?limit=50`, {
+    headers: getHeaders(accessToken)
+  });
   return await playlists.json();
 }
 
