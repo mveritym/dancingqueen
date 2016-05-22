@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 
 import routes from '../app/routes';
 import renderPage from './renderer';
-import store from '../app/mainStore';
+import { store, runMiddleware } from '../app/mainStore';
 
 import { login, loginCallback } from './login';
 

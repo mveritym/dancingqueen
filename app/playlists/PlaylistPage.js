@@ -4,7 +4,7 @@ import { fetchPlaylists } from './actions';
 
 export class PlaylistPage extends React.Component {
   componentWillMount() {
-    this.props.dispatch(fetchPlaylists);
+    this.props.dispatch(fetchPlaylists(this.props.location.query.access_token));
   };
 
   render() {

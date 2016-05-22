@@ -9,7 +9,10 @@ import {PlaylistPage} from './PlaylistPage';
 describe('PlaylistPage', () => {
 
   const props = {
-    dispatch: () => {}
+    dispatch: () => {},
+    location: {
+      query: {}
+    }
   }
 
   it('renders a header', () => {
