@@ -1,0 +1,6 @@
+@import '../styles/variables.css';
+
+.playlistPage {
+  max-width: var(--mobile-mq-max-width);
+  margin: auto;
+}

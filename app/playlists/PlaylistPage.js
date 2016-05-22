@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylists } from './actions';
+import Playlist from './Playlist';
+import styles from './playlistPage.css'
 
 export class PlaylistPage extends React.Component {
   componentWillMount() {
@@ -9,8 +11,14 @@ export class PlaylistPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Playlist List</h1>
+      <div className={styles.playlistPage}>
+        {
+          this.props.playlists
+            .filter(playlist => playlist.collaborative)
+            .map(playlist => (
+              <Playlist {...playlist} />
+            ))
+        }
       </div>
     )
   };
