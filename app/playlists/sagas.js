@@ -3,11 +3,10 @@ import { call, put } from 'redux-saga/effects';
 import { playlistFetchSuccess } from './actions';
 import api from '../api/api';
 
-function* fetchPlaylists(action) {
+export function* fetchPlaylists(action) {
   try {
     const playlists = yield call(api.getPlaylists, action.accessToken);
     yield put(playlistFetchSuccess(playlists));
-    console.log('Sent action');
   } catch (error) {
     console.log('Error:', error.message);
   }
