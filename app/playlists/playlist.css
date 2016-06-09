@@ -1,0 +1,17 @@
+@import url("../styles/variables.css");
+
+.playlist {
+  position: relative;
+  margin-bottom: 15px;
+  composes: bariolRegular from "../fonts/fonts.css";
+}
+
+.image {
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  position: absolute;
+  top: 25%;
+}

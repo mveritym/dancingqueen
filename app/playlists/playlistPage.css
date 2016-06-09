@@ -3,4 +3,5 @@
 .playlistPage {
   max-width: var(--mobile-mq-max-width);
   margin: auto;
+  padding: 15px 15px 0 15px;
 }
